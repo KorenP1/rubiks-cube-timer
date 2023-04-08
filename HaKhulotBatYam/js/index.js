@@ -4,13 +4,11 @@ const result = document.getElementById("result");
 
 
 // Functions
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
-
-
-
 function timerParser(direction) {
+
+  function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
 
   let args = Array.prototype.slice.call(arguments, 0);
   let finalResult;
@@ -218,6 +216,7 @@ function stopTimer(timerInterval) {
       clearInterval(timerInterval);
 
       insert(result.innerHTML);
+
       restart();
 
     }
@@ -283,13 +282,24 @@ function updateStats() {
 
 }
 
+function restart() {
 
-
-async function restart() {
   updateStats();
   scramble();
-  await sleep(1 * 1000);
-  inspection();
+
+  function listenerUpFunc(event) {
+
+    if (event.code === 'Space') {
+
+      document.removeEventListener('keyup', listenerUpFunc);
+
+      inspection();
+
+    }
+  }
+
+  document.addEventListener('keyup', listenerUpFunc);
+
 }
 
 
