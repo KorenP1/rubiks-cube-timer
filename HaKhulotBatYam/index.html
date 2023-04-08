@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <title>HaKhulot Bat Yam</title>
+    <link rel="stylesheet" href="css/styles.css">
+
+  </head>
+
+  <body>
+
+    <h1 class="khulot fixed white">HaKhulot Bat Yam</h1>
+
+    <img src="img/Cool-cube.png" class="fixed top-right small-size">
+
+    <button onclick="window.location='html/memorial.html'" class="memorial-btn fixed white"><img src="/favicon.ico"></button>
+
+    <div class="runtime-div fixed">
+      <button id="scramble" onclick="scramble()" class="scramble white">Scramble</button>
+      <h1 id="result" class="result white">0.00</h1>
+    </div>
+
+    <table id="solves-table" class="solves-table fixed">
+      <thead>
+          <tr>
+              <th>Solve</th>
+              <th>Time</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td>1</td>
+              <td></td>
+          </tr>
+          <tr>
+              <td>2</td>
+              <td></td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td></td>
+          </tr>
+      </tbody>
+  </table>
+
+  <table id="stats-table" class="stats-table fixed">
+    <tbody>
+        <tr>
+            <td>Best Solve:</td>
+            <td>None</td>
+        </tr>
+        <tr>
+          <td>Worst Solve:</td>
+          <td>None</td>
+        </tr>
+        <tr>
+            <td>Mean:</td>
+            <td>None</td>
+        </tr>
+        <tr>
+          <td>Average:</td>
+          <td>None</td>
+      </tr>
+    </tbody>
+  </table>
+
+    <div id="fade" class="center-div fixed">
+      <div class="fixed dim"></div>
+        <img src="img/Soup-cube.png" class="rotate small-size">
+        <h1 class="loading">Loading...</h1>
+        <h1 class="by fixed">By KorenP</h1>
+      </div>
+    </div>
+
+  <script src="js/index.js"></script>
+
+  </body>
+
+</html>
