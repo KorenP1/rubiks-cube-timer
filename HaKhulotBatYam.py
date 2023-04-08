@@ -1,5 +1,5 @@
 # Imports
-from flask import Flask
+from flask import Flask, redirect
 
 
 # Constants
@@ -12,6 +12,10 @@ app = Flask(__name__, static_folder=DIRECTORY_PATH)
 @app.route('/')
 def index():
     return app.send_static_file('index.html')
+
+@app.route('/index.html')
+def full_index():
+    return redirect("/", code=301)
 
 @app.route('/<path:path>')
 def static_file(path):
