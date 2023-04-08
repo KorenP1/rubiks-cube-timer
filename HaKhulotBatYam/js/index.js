@@ -6,10 +6,6 @@ const result = document.getElementById("result");
 // Functions
 function timerParser(direction) {
 
-  function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-  }
-
   let args = Array.prototype.slice.call(arguments, 0);
   let finalResult;
 
@@ -88,6 +84,10 @@ function scramble() {
 
 
 async function sleepNfadeNremove(id, seconds) {
+
+  function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
 
   await sleep(seconds * 1000);
 
