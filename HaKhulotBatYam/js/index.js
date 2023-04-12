@@ -53,27 +53,39 @@ function timerParser(direction) {
 function scramble() {
 
   function randomElement(list) {
-      return list[Math.floor(Math.random() * list.length)];
+    return list[Math.floor(Math.random() * list.length)];
+  }
+
+  function randomElementExceptOf(list, exceptOf) {
+    list.push(list.splice(list.indexOf(exceptOf), 1).join());
+    return list[Math.floor(Math.random() * (list.length - 1))];
+  }
+
+  function randomElementExceptOf2(list, exceptOf1, exceptOf2) {
+    list.push(list.splice(list.indexOf(exceptOf1), 1).join());
+    list.push(list.splice(list.indexOf(exceptOf2), 1).join());
+    return list[Math.floor(Math.random() * (list.length - 2))];
   }
 
   const moves = ["F", "R", "U", "B", "L", "D"];
   const types = ["", "'", "2"];
 
-  let array_scramble = []
+  let array_scramble = [];
+  array_scramble.push(randomElement(moves) + randomElement(types));
+  array_scramble.push(randomElementExceptOf(moves, array_scramble[0][0]) + randomElement(types));
 
-  for (let i = 0; i < 20; i++) {
+  for (let i = 0; i < 18; i++) {
 
-    let move = randomElement(moves);
+    let lastMove = array_scramble.at(-1)[0];
+    let moveBeforeLastMove = array_scramble.at(-2)[0];
+
+    let move = randomElementExceptOf2(moves, lastMove, moveBeforeLastMove);
     let type = randomElement(types);
 
     let final_turn = move + type;
 
     array_scramble.push(final_turn);
 
-    if (i > 0 && array_scramble.at(-1)[0] === array_scramble.at(-2)[0]) {
-      array_scramble.pop();
-      i--;
-    }
   }
     
   let final_scramble = array_scramble.join(" ");
