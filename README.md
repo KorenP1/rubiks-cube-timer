@@ -1,1 +1,1 @@
-In memorial for the Khulot Bat Yam
+Rubik's Cube Timer "HaKhulot Bat Yam"
