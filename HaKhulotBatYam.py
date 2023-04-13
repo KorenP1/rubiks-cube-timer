@@ -4,7 +4,7 @@ from flask import Flask, redirect
 
 # Constants
 PORT = 8080
-DIRECTORY_PATH = 'haKhulotBatYam'
+DIRECTORY_PATH = 'HaKhulotBatYam'
 
 
 app = Flask(__name__, static_folder=DIRECTORY_PATH)
