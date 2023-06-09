@@ -1,4 +1,4 @@
-FROM python:3.8
+FROM python:alpine
 
 RUN mkdir /app && chmod 777 /app
 
