@@ -1,4 +1,4 @@
-# Rubik's Cube Timer "HaKhulot Bat Yam"
+# Rubik's Cube Timer
 
 To run in a container:
 
